@@ -12,10 +12,12 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
     TangoApplication tango;
 
     //表示させるモデル
-    GameObject model;
+    GameObject doorModel;
+    GameObject dwarfModel;
 
     //表示させるモデルの大きさ（メートル単位）
-    float modelHeight;
+    float doorHeight;
+    float dwarfHeight;
 
     //マーカーの大きさ（メートル単位）
     double markerSize = 0.1;
@@ -29,10 +31,12 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         markers = new List<TangoSupport.Marker>();
 
         //表示するモデルをスクリプト内で使用できるように
-        model = GameObject.Find("Dwarf");
+        doorModel = GameObject.Find("Door");
+        dwarfModel = GameObject.Find("Dwarf");
 
         //モデルの高さを取得（OnTangoImageAvailable...で使用）
-        modelHeight = model.transform.lossyScale.y;
+        doorHeight = doorModel.transform.lossyScale.y;
+        dwarfHeight = dwarfModel.transform.lossyScale.y;
 	}
 	
     public void OnTangoImageAvailableEventHandler(TangoEnums.TangoCameraId cameraId, TangoUnityImageData imageBuffer)
@@ -50,13 +54,21 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
             {
                 case "1":
                     //マーカーの位置と角度をモデルに反映
-                    model.transform.position = marker.m_translation;
-                    model.transform.rotation = marker.m_orientation;
+                    doorModel.transform.position = marker.m_translation;
+                    doorModel.transform.rotation = marker.m_orientation;
                     
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    model.transform.Translate(0, modelHeight * 0.5f, 0, Space.Self);
+                    doorModel.transform.Translate(0, doorHeight * 0.5f, 0, Space.Self);
                     break;
 
+                case "2":
+                    //マーカーの位置と角度をモデルに反映
+                    dwarfModel.transform.position = marker.m_translation;
+                    dwarfModel.transform.rotation = marker.m_orientation;
+
+                    //モデルの中心が原点に設定されていることが多いので、ここで調整
+                    dwarfModel.transform.Translate(0, dwarfHeight * 0.5f, 0, Space.Self);
+                    break;
             }
         }
     }
