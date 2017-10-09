@@ -29,7 +29,7 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         markers = new List<TangoSupport.Marker>();
 
         //表示するモデルをスクリプト内で使用できるように
-        model = GameObject.Find("Door");
+        model = GameObject.Find("Dwarf");
 
         //モデルの高さを取得（OnTangoImageAvailable...で使用）
         modelHeight = model.transform.lossyScale.y;
