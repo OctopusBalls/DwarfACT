@@ -18,8 +18,8 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
     /// Models
     /// </summary>
     //表示させるモデル
-    public GameObject doorPrefab;
-    public GameObject dwarfPrefab;
+    GameObject doorPrefab;
+    GameObject dwarfPrefab;
 
     //表示させるモデルの大きさ（メートル単位）
     float doorHeight;
@@ -31,7 +31,7 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
     /// MarkerInfo
     /// </summary>
     //マーカーの大きさ（メートル単位）
-    const double markerSize = 0.1;
+    const double markerSize = 0.14;
 
 	// Use this for initialization
 	void Start () {
@@ -40,12 +40,10 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         tango.Register(this);
 
         markers = new List<TangoSupport.Marker>();
-
-        /* プレハブから取得するのでコメントアウト
+        
         //表示するモデルをスクリプト内で使用できるように
         doorPrefab = GameObject.Find("Door");
         dwarfPrefab = GameObject.Find("Dwarf");
-        */
 
         //モデルの高さを取得（OnTangoImageAvailable...で使用）
         doorHeight = doorPrefab.transform.lossyScale.y;
@@ -66,14 +64,7 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
             switch (marker.m_content)
             {
                 case "1":
-                    //認識時に一度だけPrefabから生成
-                    if (!doorCreateFlag)
-                    {
-                        //下記でマーカーのロケーションに合わせるのでPrefabをそのまま生成
-                        Instantiate(doorPrefab);
-                        doorCreateFlag = true;
-                    }
-
+                    
                     //マーカーの位置と角度をモデルに反映
                     doorPrefab.transform.position = marker.m_translation;
                     doorPrefab.transform.rotation = marker.m_orientation;
