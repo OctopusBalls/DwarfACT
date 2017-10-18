@@ -18,8 +18,8 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
     /// Models
     /// </summary>
     //表示させるモデル
-    GameObject doorPrefab;
-    GameObject dwarfPrefab;
+    GameObject doorModel;
+    GameObject dwarfModel;
 
     //表示させるモデルの大きさ（メートル単位）
     float doorHeight;
@@ -42,13 +42,14 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         markers = new List<TangoSupport.Marker>();
         
         //表示するモデルをスクリプト内で使用できるように
-        doorPrefab = GameObject.Find("Door");
-        dwarfPrefab = GameObject.Find("Dwarf");
+        doorModel = GameObject.Find("Door");
+        dwarfModel = GameObject.Find("Dwarf");
 
         //モデルの高さを取得（OnTangoImageAvailable...で使用）
-        doorHeight = doorPrefab.transform.lossyScale.y;
-        dwarfHeight = dwarfPrefab.transform.lossyScale.y;
-	}
+        doorHeight = doorModel.transform.lossyScale.y;
+        dwarfHeight = dwarfModel.transform.lossyScale.y;
+        
+    }
 	
     public void OnTangoImageAvailableEventHandler(TangoEnums.TangoCameraId cameraId, TangoUnityImageData imageBuffer)
     {
@@ -64,22 +65,22 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
             switch (marker.m_content)
             {
                 case "1":
-                    
+
                     //マーカーの位置と角度をモデルに反映
-                    doorPrefab.transform.position = marker.m_translation;
-                    doorPrefab.transform.rotation = marker.m_orientation;
+                    doorModel.transform.position = marker.m_translation;
+                    doorModel.transform.rotation = marker.m_orientation;
                     
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    doorPrefab.transform.Translate(0, doorHeight * 0.5f, 0, Space.Self);
+                    doorModel.transform.Translate(0, doorHeight * 0.5f, 0, Space.Self);
                     break;
 
                 case "2":
                     //マーカーの位置と角度をモデルに反映
-                    dwarfPrefab.transform.position = marker.m_translation;
-                    dwarfPrefab.transform.rotation = marker.m_orientation;
+                    dwarfModel.transform.position = marker.m_translation;
+                    dwarfModel.transform.rotation = marker.m_orientation;
 
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    dwarfPrefab.transform.Translate(0, dwarfHeight * 0.5f, 0, Space.Self);
+                    dwarfModel.transform.Translate(0, dwarfHeight * 0.5f, 0, Space.Self);
                     break;
             }
         }

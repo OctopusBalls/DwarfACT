@@ -463,7 +463,10 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
   cloudServicesEnabled:
+    Build: 0
     Collab: 1
+    ErrorHub: 0
+    Hub: 0
     UNet: 1
   cloudProjectId: cee0c03a-ec59-45b0-a3ee-dba64b2f5f7e
   projectName: DwarfACT
