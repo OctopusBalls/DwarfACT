@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 73183590e8195194d96e5b871bd1ac20
+timeCreated: 1509531920
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: AlphaWood
+  fontNames:
+  - AlphaWood
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
