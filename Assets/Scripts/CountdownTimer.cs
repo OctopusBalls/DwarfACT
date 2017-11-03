@@ -29,7 +29,8 @@ public class CountdownTimer : MonoBehaviour {
             sourceText.text = minute.ToString() + ":" + second.ToString();
             */
 
-            sourceText.text = limitTime.ToString();
+            int nowTime = (int)limitTime;
+            sourceText.text = nowTime.ToString();
             limitTime -= Time.deltaTime;
         }
     }
