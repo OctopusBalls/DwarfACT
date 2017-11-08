@@ -9,3 +9,5 @@ EditorBuildSettings:
     path: Assets/Scenes/StartMenu.unity
   - enabled: 1
     path: Assets/Scenes/MarkerTracking.unity
+  - enabled: 1
+    path: Assets/Scenes/Result.unity

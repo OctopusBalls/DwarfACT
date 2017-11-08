@@ -14,7 +14,20 @@ public class SwitchingScenes : MonoBehaviour {
 	void Update () {
         if (Input.GetMouseButtonDown(0))
         {
-            SceneManager.LoadScene("MarkerTracking");
+            //現在のシーン名を取得
+            switch (SceneManager.GetActiveScene().name)
+            {
+                //シーン推移
+                case "StartMenu":
+                    SceneManager.LoadScene("MarkerTracking");
+                    break;
+
+                case "Result":
+                    SceneManager.LoadScene("StartMenu");
+                    break;
+
+            }
+
         }
 	}
 }

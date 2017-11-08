@@ -11,7 +11,7 @@ public class CountdownTimer : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        limitTime = 180.0f;
+        limitTime = 10.0f;
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class CountdownTimer : MonoBehaviour {
     {
         if(limitTime <= 0.0f)
         {
-            SceneManager.LoadScene("StartMenu");
+            SceneManager.LoadScene("Result");
         }
         else{
             /*
