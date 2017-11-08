@@ -30,7 +30,7 @@ public class CountdownTimer : MonoBehaviour {
             */
 
             int nowTime = (int)limitTime;
-            sourceText.text = nowTime.ToString();
+            sourceText.text = nowTime.ToString("D3");
             limitTime -= Time.deltaTime;
         }
     }
