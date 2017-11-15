@@ -69,7 +69,6 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
             switch (marker.m_content)
             {
                 case "1":
-
                     //マーカーの位置と角度をモデルに反映
                     doorModel.transform.position = marker.m_translation;
                     doorModel.transform.rotation = marker.m_orientation;
@@ -93,7 +92,7 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
                     yamaModel.transform.rotation = marker.m_orientation;
 
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    yamaModel.transform.Translate(0, dwarfHeight * 0.5f, 0, Space.Self);
+                    yamaModel.transform.Translate(0, dwarfHeight * 0.05f, 0, Space.Self);
                     break;
 
             }
