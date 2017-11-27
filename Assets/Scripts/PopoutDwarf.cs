@@ -7,23 +7,35 @@ public class PopoutDwarf : MonoBehaviour {
     public GameObject originDwarfModel;
     private GameObject clonedDwarfModel;
 
+    int POPOUT_MAX = 5;
+
 	// Use this for initialization
 	void Start () {
-        clonedDwarfModel = Object.Instantiate(originDwarfModel) as GameObject;
+        
 	}
 
     // Update is called once per frame
     void Update()
     {
-        GameObject reslutGameObject = GetClickObject();
-        if (reslutGameObject != null && reslutGameObject.name == "Door")
+        GameObject hitGameObject = GetClickObject();
+        if (hitGameObject != null)
         {
-            Transform myTransform = this.transform;
+            switch (hitGameObject.name)
+            {
+                case "Door":
+                    for (int i = 0; i < POPOUT_MAX; i++)
+                    {
+                        clonedDwarfModel = Object.Instantiate(originDwarfModel) as GameObject;
 
-            float popoutX = myTransform.position.x + Random.Range(-0.02f, 0.02f);
-            float popoutZ = myTransform.position.z + Random.Range(-0.02f, 0.02f);
+                        Transform myTransform = this.transform;
 
-            clonedDwarfModel.transform.position = new Vector3(popoutX, myTransform.position.y, popoutZ);
+                        float popoutX = myTransform.position.x + Random.Range(-0.02f, 0.02f);
+                        float popoutZ = myTransform.position.z + Random.Range(-0.02f, 0.02f);
+
+                        clonedDwarfModel.transform.position = new Vector3(popoutX, myTransform.position.y, popoutZ);
+                    }
+                    break;
+            }
         }
     }
 
