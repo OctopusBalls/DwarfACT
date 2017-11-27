@@ -20,8 +20,8 @@ public class PopoutDwarf : MonoBehaviour {
         {
             Transform myTransform = this.transform;
 
-            float popoutX = myTransform.position.x + Random.Range(-0.05f, 0.05f);
-            float popoutZ = myTransform.position.z + Random.Range(-0.05f, 0.05f);
+            float popoutX = myTransform.position.x + Random.Range(-0.02f, 0.02f);
+            float popoutZ = myTransform.position.z + Random.Range(-0.02f, 0.02f);
 
             clonedDwarfModel.transform.position = new Vector3(popoutX, myTransform.position.y, popoutZ);
         }
