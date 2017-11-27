@@ -15,7 +15,8 @@ public class PopoutDwarf : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (GetClickObject().name == "Door")
+        GameObject reslutGameObject = GetClickObject();
+        if (reslutGameObject != null && reslutGameObject.name == "Door")
         {
             Transform myTransform = this.transform;
 
