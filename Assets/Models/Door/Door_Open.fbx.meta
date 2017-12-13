@@ -56,7 +56,7 @@ ModelImporter:
     4300012: polySurface33_MeshPart6
     4300014: polySurface72
     4300016: polySurface71
-    7400000: Take 001
+    7400000: Door_Open
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -78,7 +78,59 @@ ModelImporter:
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Door_Open
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 240
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: bend1Handle1
+        weight: 1
+      - path: polySurface33
+        weight: 1
+      - path: polySurface33/polySurface33_MeshPart0
+        weight: 1
+      - path: polySurface33/polySurface33_MeshPart1
+        weight: 1
+      - path: polySurface33/polySurface33_MeshPart2
+        weight: 1
+      - path: polySurface33/polySurface33_MeshPart3
+        weight: 1
+      - path: polySurface33/polySurface33_MeshPart4
+        weight: 1
+      - path: polySurface33/polySurface33_MeshPart5
+        weight: 1
+      - path: polySurface33/polySurface33_MeshPart6
+        weight: 1
+      - path: polySurface71
+        weight: 1
+      - path: polySurface72
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []

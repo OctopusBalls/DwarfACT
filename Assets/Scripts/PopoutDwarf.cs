@@ -7,12 +7,15 @@ public class PopoutDwarf : MonoBehaviour {
     public GameObject originDwarfModel;
     private GameObject clonedDwarfModel;
 
+    private Animator animator;
+
     int POPOUT_MAX = 5;
 
 	// Use this for initialization
 	void Start () {
-        
-	}
+        animator = GetComponent<Animator>();
+
+    }
 
     // Update is called once per frame
     void Update()
@@ -23,6 +26,8 @@ public class PopoutDwarf : MonoBehaviour {
             switch (hitGameObject.name)
             {
                 case "Door":
+                    animator.Play("Open", 0, 0.0f);
+
                     for (int i = 0; i < POPOUT_MAX; i++)
                     {
                         clonedDwarfModel = Object.Instantiate(originDwarfModel) as GameObject;
@@ -38,6 +43,7 @@ public class PopoutDwarf : MonoBehaviour {
                     break;
             }
         }
+        
     }
 
     public GameObject GetClickObject()
