@@ -37,11 +37,11 @@ public class PopoutDwarf : MonoBehaviour {
                             clonedDwarfModel = Object.Instantiate(originDwarfModel) as GameObject;
                             clonedDwarfModel.name = originDwarfModel.name;
 
-                            Transform myTransform = this.transform;
+                            Transform doorTransform = this.transform;
 
-                            float popoutX = myTransform.position.x + Random.Range(-0.15f, 0.15f);
+                            float popoutX = doorTransform.position.x + Random.Range(-0.15f, 0.15f);
                             float popoutY = originDwarfModel.transform.position.y;
-                            float popoutZ = myTransform.position.z + Random.Range(-0.15f, 0.15f);
+                            float popoutZ = doorTransform.position.z + Random.Range(-0.15f, 0.15f);
 
                             clonedDwarfModel.transform.position = new Vector3(popoutX, popoutY, popoutZ);
                         }
