@@ -74,7 +74,7 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
                     doorModel.transform.rotation = marker.m_orientation;
                     
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    doorModel.transform.Translate(0, doorHeight * 0.5f, 0, Space.Self);
+                    doorModel.transform.Translate(0, doorHeight * 0.001f, 0, Space.Self);
                     break;
 
                 case "2":
