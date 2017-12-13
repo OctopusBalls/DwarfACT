@@ -9,6 +9,8 @@ public class PopoutDwarf : MonoBehaviour {
 
     private Animator animator;
 
+    private bool calledFlag = false;
+
     int POPOUT_MAX = 5;
 
 	// Use this for initialization
@@ -26,19 +28,25 @@ public class PopoutDwarf : MonoBehaviour {
             switch (hitGameObject.name)
             {
                 case "Door":
-                    animator.Play("Open", 0, 0.0f);
-
-                    for (int i = 0; i < POPOUT_MAX; i++)
+                    if (!calledFlag)
                     {
-                        clonedDwarfModel = Object.Instantiate(originDwarfModel) as GameObject;
+                        animator.Play("Open", 0, 0.0f);
 
-                        Transform myTransform = this.transform;
+                        for (int i = 0; i < POPOUT_MAX; i++)
+                        {
+                            clonedDwarfModel = Object.Instantiate(originDwarfModel) as GameObject;
+                            clonedDwarfModel.name = originDwarfModel.name;
 
-                        float popoutX = myTransform.position.x + Random.Range(-0.15f, 0.15f);
-                        float popoutY = originDwarfModel.transform.position.y;
-                        float popoutZ = myTransform.position.z + Random.Range(-0.15f, 0.15f);
+                            Transform myTransform = this.transform;
 
-                        clonedDwarfModel.transform.position = new Vector3(popoutX, popoutY, popoutZ);
+                            float popoutX = myTransform.position.x + Random.Range(-0.15f, 0.15f);
+                            float popoutY = originDwarfModel.transform.position.y;
+                            float popoutZ = myTransform.position.z + Random.Range(-0.15f, 0.15f);
+
+                            clonedDwarfModel.transform.position = new Vector3(popoutX, popoutY, popoutZ);
+                        }
+
+                        calledFlag = true;
                     }
                     break;
             }
