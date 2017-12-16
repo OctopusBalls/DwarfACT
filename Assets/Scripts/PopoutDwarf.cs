@@ -1,5 +1,8 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 51febdc4c5f1abf7f7c537dac80203723fbbbdb1
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -150,6 +153,7 @@ public class PopoutDwarf : MonoBehaviour {
     }
 }
 >>>>>>> develop
+<<<<<<< HEAD
 =======
 ﻿using System.Collections;
 using System.Collections.Generic;
@@ -226,3 +230,5 @@ public class PopoutDwarf : MonoBehaviour {
     }
 }
 >>>>>>> develop
+=======
+>>>>>>> 51febdc4c5f1abf7f7c537dac80203723fbbbdb1
