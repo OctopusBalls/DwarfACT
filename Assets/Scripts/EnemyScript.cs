@@ -9,6 +9,11 @@ public class EnemyScript : MonoBehaviour {
     public GameObject spawnObject;
 	public Vector3 moveDirection;
 
+<<<<<<< HEAD
+	private GameObject HP_UI;
+
+=======
+>>>>>>> 352de85eac2c59a06d39616e3ae72961063bd3d4
 	float speed = 0.3f;
 	float jumpOffHeight = 2.0f;
 	float stoppingDistance = 0.5f;
@@ -18,8 +23,14 @@ public class EnemyScript : MonoBehaviour {
 	void Start () {
 
 		m_characterController = GetComponent<CharacterController>();
+<<<<<<< HEAD
+        target = GameObject.Find("taiki3");
+        spawnObject = GameObject.Find("SpawnPoint");
+		HP_UI = transform.FindChild ("HP_UI").gameObject;
+=======
         target = GameObject.Find("Bu-Otoko");
         spawnObject = GameObject.Find("SpawnPoint");
+>>>>>>> 352de85eac2c59a06d39616e3ae72961063bd3d4
         
     }
 
@@ -40,7 +51,16 @@ public class EnemyScript : MonoBehaviour {
             {
                 if (hit.collider.gameObject == this.gameObject)
                 {
+<<<<<<< HEAD
+					HP_UI.GetComponent<OperationCanvas> ().enemyHP -= 10;
+
+					if (HP_UI.GetComponent<OperationCanvas> ().enemyHP == 0) {
+						Destroy (gameObject);
+					}
+
+=======
                     Destroy(gameObject);
+>>>>>>> 352de85eac2c59a06d39616e3ae72961063bd3d4
                 }
             }
 

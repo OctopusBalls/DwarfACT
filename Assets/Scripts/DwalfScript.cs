@@ -43,12 +43,20 @@ public class DwalfScript: MonoBehaviour {
                 moveDirection = target.transform.position - m_characterController.transform.position;
                 //moveDirection.y = 0;
 				moveDirection.y -= 9.8f;
+<<<<<<< HEAD
+=======
                
+>>>>>>> 352de85eac2c59a06d39616e3ae72961063bd3d4
             }
             
 
             if (moveDirection.magnitude > stoppingDistance)
             {
+<<<<<<< HEAD
+                //移動アニメーション再生
+				stayAnim.Play("Move");
+
+=======
 
                 //transform.LookAt(new Vector3(lookTarget.transform.position.x,transform.position.y,lookTarget.transform.position.z));
                 /*moveDirection = transform.TransformDirection(moveDirection.normalized * speed);
@@ -58,11 +66,16 @@ public class DwalfScript: MonoBehaviour {
                 m_characterController.transform.rotation = tmpRotation;*/
                 //移動アニメーション再生
                 
+>>>>>>> 352de85eac2c59a06d39616e3ae72961063bd3d4
             }
             else
             {
                 //停止アニメーション再生
+<<<<<<< HEAD
+                stayAnim.Play("Idle");
+=======
                 stayAnim.Play();
+>>>>>>> 352de85eac2c59a06d39616e3ae72961063bd3d4
             }
             
             if(Physics.Raycast(m_characterController.transform.position,Vector3.forward,out forwardHitInfo, forwardDistance))
@@ -71,6 +84,15 @@ public class DwalfScript: MonoBehaviour {
             }
             else
             {
+<<<<<<< HEAD
+				
+            }
+
+			moveDirection.y -= 9.8f;
+            transform.LookAt(new Vector3(lookTarget.transform.position.x, transform.position.y, lookTarget.transform.position.z));
+            m_characterController.Move(moveDirection * Time.deltaTime);
+
+=======
             }
 
             if (!m_characterController.isGrounded)
@@ -87,6 +109,7 @@ public class DwalfScript: MonoBehaviour {
             }
             transform.LookAt(new Vector3(lookTarget.transform.position.x, transform.position.y, lookTarget.transform.position.z));
             m_characterController.Move(moveDirection * Time.deltaTime);
+>>>>>>> 352de85eac2c59a06d39616e3ae72961063bd3d4
         }
 	}
 }
