@@ -19,7 +19,7 @@ public class SwitchingScenes : MonoBehaviour {
             {
                 //シーン推移
                 case "StartMenu":
-                    SceneManager.LoadScene("SimpleAugmentedReality");
+                    SceneManager.LoadScene("MarkerTracking");
                     break;
 
                 case "Result":
