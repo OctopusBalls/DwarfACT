@@ -29,8 +29,6 @@ public class DwalfScript: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         
-        RaycastHit forwardHitInfo;
-
         if(m_characterController != null)
         {
             if (!rayCube.GetComponent<Hit_DetectionScript>().meshHit)
@@ -56,16 +54,7 @@ public class DwalfScript: MonoBehaviour {
             {
                 //停止アニメーション再生
                 stayAnim.Play("Idle");
-            }
-            
-            if(Physics.Raycast(m_characterController.transform.position,Vector3.forward,out forwardHitInfo, forwardDistance))
-            {
-                //transform.rotation = Quaternion.AngleAxis(180, new Vector3(0,1,0));
-            }
-            else
-            {
-				
-            }
+            }            
 
 			moveDirection.y -= 9.8f;
             transform.LookAt(new Vector3(lookTarget.transform.position.x, transform.position.y, lookTarget.transform.position.z));
