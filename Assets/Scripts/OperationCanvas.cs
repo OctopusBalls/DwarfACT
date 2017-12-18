@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Tango;
+using TangoExtensions;
 
 public class OperationCanvas : MonoBehaviour {
 
     public Slider slider;
-	public Camera camera;
+	public GameObject camera;
     public int maxEnemyHP;
     public int enemyHP;
 
@@ -14,6 +16,7 @@ public class OperationCanvas : MonoBehaviour {
 	void Start () {
         slider.maxValue = maxEnemyHP;
         slider.value = enemyHP;
+        camera = GameObject.FindWithTag("MainCamera");
 	}
 	
 	// Update is called once per frame
