@@ -1,0 +1,16 @@
+diff a/Assets/Scenes/SimpleAugmentedReality.unity b/Assets/Scenes/SimpleAugmentedReality.unity	(rejected hunks)
+@@ -163,6 +163,14 @@
+ GameObject:
+   m_PrefabParentObject: {fileID: 103230, guid: b65144e12d543401285d34c736b7ec92, type: 2}
+   m_PrefabInternal: {fileID: 294935272}
++<<<<<<< HEAD
++--- !u!20 &74615527 stripped
++Camera:
++  m_PrefabParentObject: {fileID: 2034540, guid: b65144e12d543401285d34c736b7ec92,
++    type: 2}
++  m_PrefabInternal: {fileID: 294935272}
++=======
++>>>>>>> 352de85eac2c59a06d39616e3ae72961063bd3d4
+ --- !u!114 &74615529
+ MonoBehaviour:
+   m_ObjectHideFlags: 0
