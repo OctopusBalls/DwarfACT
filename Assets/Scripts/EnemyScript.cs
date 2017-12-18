@@ -20,7 +20,7 @@ public class EnemyScript : MonoBehaviour {
 	void Start () {
 
 		m_characterController = GetComponent<CharacterController>();
-        target = GameObject.Find("taiki3");
+        target = GameObject.Find("Dwarf");
         spawnObject = GameObject.Find("SpawnPoint");
 		HP_UI = transform.FindChild ("HP_UI").gameObject;
         
