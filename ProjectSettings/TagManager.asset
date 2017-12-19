@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Dwarf
   - Door
+  - Moon
+  - Flag
   layers:
   - Default
   - TransparentFX
