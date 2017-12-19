@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 207211072}
   - component: {fileID: 207211071}
   m_Layer: 0
-  m_Name: GameObject (1)
+  m_Name: CountdownTimer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f0c8ed21c8ed54d97f65fc3805da69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sourceText: {fileID: 2042867996}
+  sourceText: {fileID: 89795349}
 --- !u!4 &207211072
 Transform:
   m_ObjectHideFlags: 0
