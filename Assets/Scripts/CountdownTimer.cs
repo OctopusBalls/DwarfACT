@@ -11,8 +11,8 @@ public class CountdownTimer : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        //limitTime = 180.0f;
-        limitTime = 10.0f;
+        limitTime = 180.0f;
+        //limitTime = 10.0f;
     }
 
     // Update is called once per frame
