@@ -212,7 +212,10 @@ PlayerSettings:
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons: []
   m_BuildTargetBatching: []
-  m_BuildTargetGraphicsAPIs: []
+  m_BuildTargetGraphicsAPIs:
+  - m_BuildTarget: AndroidPlayer
+    m_APIs: 080000000b000000
+    m_Automatic: 0
   m_BuildTargetVRSettings: []
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
@@ -471,11 +474,11 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     Build: 0
-    Collab: 1
+    Collab: 0
     ErrorHub: 0
     Hub: 0
     UNet: 1
-  cloudProjectId: cee0c03a-ec59-45b0-a3ee-dba64b2f5f7e
+  cloudProjectId: 65df9a43-5061-4e8b-a120-a501ba059325
   projectName: DwarfACT
-  organizationId: octopusballs
+  organizationId: babon_1996
   cloudEnabled: 0

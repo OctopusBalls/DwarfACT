@@ -5,13 +5,14 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class CountdownTimer : MonoBehaviour {
-    private float limitTime;
+    public float limitTime;
     public Text sourceText;
 
     // Use this for initialization
     void Start()
     {
-        limitTime = 180.0f;
+        //limitTime = 180.0f;
+        //limitTime = 10.0f;
     }
 
     // Update is called once per frame

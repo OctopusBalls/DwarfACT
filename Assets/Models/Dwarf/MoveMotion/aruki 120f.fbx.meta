@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: 8d9592501f03ca645ba9f35fafba9a9e
+timeCreated: 1512541906
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Head
+    100004: Head_tip
+    100006: Hips
+    100008: LeftArm
+    100010: LeftFoot
+    100012: LeftFoot_tip
+    100014: LeftForeArm
+    100016: LeftForeArmROll
+    100018: LeftHand
+    100020: LeftHand_tip
+    100022: LeftHandBase
+    100024: LeftHandThumb
+    100026: LeftHandThumb_tip
+    100028: leftLeg
+    100030: LeftShoulder
+    100032: LeftToeBase
+    100034: LeftUpleg
+    100036: Neck
+    100038: polySurface19
+    100040: RightArm
+    100042: RightFoot
+    100044: RightFoot_tip
+    100046: RightForeArm
+    100048: RightForeArmROll
+    100050: RightHand
+    100052: RightHand_tip
+    100054: RightHandBase
+    100056: RightHandThumb
+    100058: RightHandThumb_tip
+    100060: RightLeg
+    100062: RightToeBase
+    100064: RightUpleg
+    100066: Spine
+    100068: Spine1
+    100070: Spine2
+    400000: //RootNode
+    400002: Head
+    400004: Head_tip
+    400006: Hips
+    400008: LeftArm
+    400010: LeftFoot
+    400012: LeftFoot_tip
+    400014: LeftForeArm
+    400016: LeftForeArmROll
+    400018: LeftHand
+    400020: LeftHand_tip
+    400022: LeftHandBase
+    400024: LeftHandThumb
+    400026: LeftHandThumb_tip
+    400028: leftLeg
+    400030: LeftShoulder
+    400032: LeftToeBase
+    400034: LeftUpleg
+    400036: Neck
+    400038: polySurface19
+    400040: RightArm
+    400042: RightFoot
+    400044: RightFoot_tip
+    400046: RightForeArm
+    400048: RightForeArmROll
+    400050: RightHand
+    400052: RightHand_tip
+    400054: RightHandBase
+    400056: RightHandThumb
+    400058: RightHandThumb_tip
+    400060: RightLeg
+    400062: RightToeBase
+    400064: RightUpleg
+    400066: Spine
+    400068: Spine1
+    400070: Spine2
+    4300000: polySurface19
+    7400000: Move
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: polySurface19
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Move
+      takeName: Take 001
+      firstFrame: 2
+      lastFrame: 120
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Hips
+        weight: 1
+      - path: Hips/LeftUpleg
+        weight: 1
+      - path: Hips/LeftUpleg/leftLeg
+        weight: 1
+      - path: Hips/LeftUpleg/leftLeg/LeftFoot
+        weight: 1
+      - path: Hips/LeftUpleg/leftLeg/LeftFoot/LeftToeBase
+        weight: 1
+      - path: Hips/LeftUpleg/leftLeg/LeftFoot/LeftToeBase/LeftFoot_tip
+        weight: 1
+      - path: Hips/RightUpleg
+        weight: 1
+      - path: Hips/RightUpleg/RightLeg
+        weight: 1
+      - path: Hips/RightUpleg/RightLeg/RightFoot
+        weight: 1
+      - path: Hips/RightUpleg/RightLeg/RightFoot/RightToeBase
+        weight: 1
+      - path: Hips/RightUpleg/RightLeg/RightFoot/RightToeBase/RightFoot_tip
+        weight: 1
+      - path: Hips/Spine
+        weight: 1
+      - path: Hips/Spine/Spine1
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/LeftArm
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/LeftArm/LeftForeArm
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/LeftArm/LeftForeArm/LeftForeArmROll
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/LeftArm/LeftForeArm/LeftForeArmROll/LeftHand
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/LeftArm/LeftForeArm/LeftForeArmROll/LeftHand/LeftHandBase
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/LeftArm/LeftForeArm/LeftForeArmROll/LeftHand/LeftHandBase/LeftHand_tip
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/LeftArm/LeftForeArm/LeftForeArmROll/LeftHand/LeftHandThumb
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/LeftArm/LeftForeArm/LeftForeArmROll/LeftHand/LeftHandThumb/LeftHandThumb_tip
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/RightArm
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/RightArm/RightForeArm
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/RightArm/RightForeArm/RightForeArmROll
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/RightArm/RightForeArm/RightForeArmROll/RightHand
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/RightArm/RightForeArm/RightForeArmROll/RightHand/RightHandBase
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/RightArm/RightForeArm/RightForeArmROll/RightHand/RightHandBase/RightHand_tip
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/RightArm/RightForeArm/RightForeArmROll/RightHand/RightHandThumb
+        weight: 1
+      - path: Hips/Spine/Spine1/LeftShoulder/RightArm/RightForeArm/RightForeArmROll/RightHand/RightHandThumb/RightHandThumb_tip
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/Neck
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/Neck/Head
+        weight: 1
+      - path: Hips/Spine/Spine1/Spine2/Neck/Head/Head_tip
+        weight: 1
+      - path: polySurface19
+        weight: 1
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
