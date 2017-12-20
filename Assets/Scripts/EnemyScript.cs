@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour {
 	public Vector3 moveDirection;
     
 	private GameObject HP_UI;
+    private bool touchFlag = false;
     
 	float speed = 0.3f;
 	float jumpOffHeight = 2.0f;
@@ -34,9 +35,19 @@ public class EnemyScript : MonoBehaviour {
         if (Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
+            TouchPhase p = touch.phase;
             Vector3 vec = touch.position;
             vec.z = 10f;
-
+            
+            if(p == TouchPhase.Began)
+            {
+                touchFlag = true;
+            }
+            
+            if(p == TouchPhase.Ended)
+            {
+                touchFlag = false;
+            }
             Ray ray = Camera.current.ScreenPointToRay(touch.position);
             RaycastHit hit = new RaycastHit();
             if (Physics.Raycast(ray, out hit))
