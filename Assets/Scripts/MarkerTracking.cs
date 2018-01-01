@@ -44,12 +44,12 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         markers = new List<TangoSupport.Marker>();
         
         //表示するモデルをスクリプト内で使用できるように
-        doorModel = GameObject.Find("Door");
+        //doorModel = GameObject.Find("Door");
         dwarfModel = GameObject.Find("Dwarf");
         yamaModel = GameObject.Find("Yama");
 
         //モデルの高さを取得（OnTangoImageAvailable...で使用）
-        doorHeight = doorModel.transform.lossyScale.y;
+        //doorHeight = doorModel.transform.lossyScale.y;
         dwarfHeight = dwarfModel.transform.lossyScale.y;
         yamaHeight = yamaModel.transform.lossyScale.y;
         
@@ -68,16 +68,18 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
 
             switch (marker.m_content)
             {
-                case "1":
+                //case "1":
+                case "2":
                     //マーカーの位置と角度をモデルに反映
-                    doorModel.transform.position = marker.m_translation;
+                    /*doorModel.transform.position = marker.m_translation;
                     doorModel.transform.rotation = marker.m_orientation;
                     
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    doorModel.transform.Translate(0, doorHeight * 0.001f, 0, Space.Self);
+                    doorModel.transform.Translate(0, doorHeight * 0.001f, 0, Space.Self); */
                     break;
 
-                case "2":
+                //case "2":
+                case "3":
                     //マーカーの位置と角度をモデルに反映
                     dwarfModel.transform.position = marker.m_translation;
                     dwarfModel.transform.rotation = marker.m_orientation;
@@ -86,13 +88,14 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
                     dwarfModel.transform.Translate(0, dwarfHeight * 0.5f, 0, Space.Self);
                     break;
 
-                case "3":
+                //case "3":
+                case "1":
                     //マーカーの位置と角度をモデルに反映
                     yamaModel.transform.position = marker.m_translation;
                     yamaModel.transform.rotation = marker.m_orientation;
 
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    yamaModel.transform.Translate(0, dwarfHeight * 0.05f, 0, Space.Self);
+                    yamaModel.transform.Translate(0, yamaHeight * 0.05f, 0, Space.Self);
                     break;
 
             }
