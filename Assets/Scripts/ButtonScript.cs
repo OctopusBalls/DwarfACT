@@ -6,21 +6,20 @@ using UnityEngine.Rendering;
 
 public class ButtonScript : MonoBehaviour{
 
-    public GameObject dynamicMesh;
+    GameObject dynamicMesh;
     Renderer rend;
-    Shader shader1;
-    public Material ReadyMeshMaterials;
-    public Material StartMeshMatarials;
+    Material StartMeshMatarials;
     private void Start()
     {
         dynamicMesh = GameObject.Find("DynamicMesh");
         rend = dynamicMesh.GetComponent<Renderer>();
-        ReadyMeshMaterials = Resources.Load<Material>("ReadyMeshMaterial");
         StartMeshMatarials = Resources.Load<Material>("MeshMaterials");
     }
 
     public void OnClick(){
         Debug.Log("Button Click");
         rend.material = StartMeshMatarials;
+        gameObject.SetActive(false);
+        gameObject.SetActive(true);
     } 
 }
