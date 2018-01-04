@@ -242,6 +242,7 @@ public class TangoDynamicMesh : MonoBehaviour, ITango3DReconstruction
     /// </summary>
     public void Update()
     {
+        m_meshRenderer.sharedMaterial = GetComponent<MeshRenderer>().sharedMaterial;
         List<Tango3DReconstruction.GridIndex> needsResize = new List<Tango3DReconstruction.GridIndex>();
 
         int it;

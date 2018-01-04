@@ -8,6 +8,7 @@ public class FlagScript : MonoBehaviour {
     public Vector3 pos;
     public Plane plane;
     public bool touchCheck = false;
+    public GameObject Flag;
 
     // Use this for initialization
     void Start () {
@@ -35,15 +36,16 @@ public class FlagScript : MonoBehaviour {
     private IEnumerator FindPlane(Vector2 touchPosition)
     {
         Camera cam = Camera.main;
+        Instantiate(Flag);
         
         if(!pointCloud.FindPlane(cam,touchPosition,out pos,out plane))
         {
             yield break;
         }
-        transform.position = pos;
-         transform.forward = new Vector3(
-            cam.transform.position.x - transform.position.x,
+        Flag.transform.position = pos;
+         Flag.transform.forward = new Vector3(
+            cam.transform.position.x - Flag.transform.position.x,
             0,
-            cam.transform.position.z - transform.position.z).normalized;
+            cam.transform.position.z - Flag.transform.position.z).normalized;
     }
 }
