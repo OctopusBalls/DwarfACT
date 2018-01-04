@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 
-public class ButtonScript : MonoBehaviour{
+public class OKButtonScript : MonoBehaviour{
 
     GameObject dynamicMesh;
     Renderer rend;
@@ -21,7 +21,6 @@ public class ButtonScript : MonoBehaviour{
         Debug.Log("Button Click");
         //rend.material = StartMeshMatarials;
         rend.sharedMaterial = StartMeshMatarials;
-        gameObject.SetActive(false);
-        gameObject.SetActive(true);
+        //gameObject.SetActive(false);
     } 
 }

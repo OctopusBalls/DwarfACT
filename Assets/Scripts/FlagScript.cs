@@ -9,10 +9,18 @@ public class FlagScript : MonoBehaviour {
     public Plane plane;
     public bool touchCheck = false;
     public GameObject Flag;
+    private GameObject cloneFlag;
+    GameObject OKButton;
+    GameObject CancelButton;
+    public bool setFlag = false;
 
     // Use this for initialization
     void Start () {
-	}
+        OKButton = GameObject.Find("OKButton");
+        CancelButton = GameObject.Find("CancelButton");
+        OKButton.SetActive(false);
+        CancelButton.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,7 +29,7 @@ public class FlagScript : MonoBehaviour {
             Touch t = Input.GetTouch(0);
             TouchPhase p = t.phase;
             touchCheck = true;
-            if(p == TouchPhase.Ended)
+            if(p == TouchPhase.Began && setFlag == false)
             {
                 StartCoroutine(FindPlane(t.position));
             }
@@ -36,16 +44,21 @@ public class FlagScript : MonoBehaviour {
     private IEnumerator FindPlane(Vector2 touchPosition)
     {
         Camera cam = Camera.main;
-        Instantiate(Flag);
+        cloneFlag = (GameObject)Instantiate(Flag);
+        cloneFlag.name = Flag.name;
         
         if(!pointCloud.FindPlane(cam,touchPosition,out pos,out plane))
         {
             yield break;
         }
-        Flag.transform.position = pos;
-         Flag.transform.forward = new Vector3(
-            cam.transform.position.x - Flag.transform.position.x,
+        cloneFlag.transform.position = pos;
+         cloneFlag.transform.forward = new Vector3(
+            cam.transform.position.x - cloneFlag.transform.position.x,
             0,
-            cam.transform.position.z - Flag.transform.position.z).normalized;
+            cam.transform.position.z - cloneFlag.transform.position.z).normalized;
+        OKButton.SetActive(true);
+        CancelButton.SetActive(true);
+        setFlag = true;
     }
+    
 }
