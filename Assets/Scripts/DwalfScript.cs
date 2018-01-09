@@ -11,6 +11,7 @@ public class DwalfScript: MonoBehaviour {
     private Animation stayAnim;
     private GameObject rayCube;
     private GameObject FlagCube;
+    private Vector3 angels;
 
 
 	float speed = 0.5f;
@@ -26,13 +27,15 @@ public class DwalfScript: MonoBehaviour {
         rayCube = transform.FindChild("Cube").gameObject;
         FlagCube = GameObject.Find("FlagCube");
         stayAnim = this.gameObject.GetComponent<Animation>();
+        angels = new Vector3(0.0f, 3.0f, 0.0f);
 
     }
 	
 	// Update is called once per frame
 	void Update () {
-        
-        if(m_characterController != null)
+
+        InvokeRepeating("ResetTimer", Random.Range(0.0f, 5.0f), Random.Range(1.0f, 5.0f));
+        /*if(m_characterController != null)
         {
             if (!rayCube.GetComponent<Hit_DetectionScript>().meshHit)
             {
@@ -51,7 +54,9 @@ public class DwalfScript: MonoBehaviour {
                 transform.LookAt(new Vector3(lookTarget.transform.position.x, transform.position.y, lookTarget.transform.position.z));
                 m_characterController.Move(moveDirection * Time.deltaTime);
             }
-        }
+        }*/
+
+        this.transform.eulerAngles += angels;
 
         if (!flagHit)
         {
@@ -83,5 +88,11 @@ public class DwalfScript: MonoBehaviour {
         {
             hit.gameObject.GetComponent<ScoreManager>().AddScore(10);
         }
+    }
+
+    private void ResetTimer()
+    {
+        angels *= -1;
+        CancelInvoke("ResetTimer");
     }
 }
