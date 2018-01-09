@@ -7,7 +7,6 @@ public class CancelButtonScript : MonoBehaviour {
 
     GameObject cancelObject;
     GameObject flagObject;
-    GameObject OKButton;
     GameObject CancelButton;
 
     // Use this for initialization
@@ -22,11 +21,9 @@ public class CancelButtonScript : MonoBehaviour {
 
     public void OnClick()
     {
-        OKButton = GameObject.Find("OKButton");
         CancelButton = GameObject.Find("CancelButton");
         cancelObject = GameObject.Find("Flag");
         GameObject.Destroy(cancelObject);
-        OKButton.SetActive(false);
         CancelButton.SetActive(false);
         flagObject.GetComponent<FlagScript>().setFlag = false;
 

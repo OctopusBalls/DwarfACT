@@ -1277,6 +1277,7 @@ GameObject:
   - component: {fileID: 1108785520}
   - component: {fileID: 1108785519}
   - component: {fileID: 1108785518}
+  - component: {fileID: 1108785521}
   m_Layer: 5
   m_Name: RightButton
   m_TagString: Untagged
@@ -1377,6 +1378,55 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1108785516}
+--- !u!114 &1108785521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1108785516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114375305768015242, guid: 0087d052d735c21489cf11db53ac76fe,
+            type: 2}
+          m_MethodName: OnRightDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114375305768015242, guid: 0087d052d735c21489cf11db53ac76fe,
+            type: 2}
+          m_MethodName: OnRightUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1209501765 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 25af08872ba804148b08381a7e6a876e, type: 3}
@@ -1394,7 +1444,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointCloud: {fileID: 1605045105}
   pos: {x: 0, y: 0, z: 0}
-  touchCheck: 0
   Flag: {fileID: 0}
   setFlag: 0
 --- !u!65 &1209501767
@@ -1701,7 +1750,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pointCloud: {fileID: 1605045105}
   pos: {x: 0, y: 0, z: 0}
-  touchCheck: 0
   Flag: {fileID: 1788440933534278, guid: f6fac28792b813543bd37b3be1b3f25b, type: 2}
   setFlag: 0
 --- !u!4 &1526461983
@@ -2280,6 +2328,7 @@ GameObject:
   - component: {fileID: 2012493741}
   - component: {fileID: 2012493740}
   - component: {fileID: 2012493739}
+  - component: {fileID: 2012493742}
   m_Layer: 5
   m_Name: LeftButton
   m_TagString: Untagged
@@ -2380,6 +2429,55 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2012493737}
+--- !u!114 &2012493742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2012493737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 2
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114375305768015242, guid: 0087d052d735c21489cf11db53ac76fe,
+            type: 2}
+          m_MethodName: OnLeftDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 3
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114375305768015242, guid: 0087d052d735c21489cf11db53ac76fe,
+            type: 2}
+          m_MethodName: OnLeftUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &2031254745
 GameObject:
   m_ObjectHideFlags: 0

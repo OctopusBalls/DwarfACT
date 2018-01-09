@@ -12,7 +12,7 @@ public class GUIScript : MonoBehaviour {
     GUIStyle style;
 
     FlagScript flagScript;
-    DwalfScript dwalfScript;
+    DwarfScript dwarfScript;
     GoalScript goalScript;
     
 	// Use this for initialization
@@ -27,7 +27,7 @@ public class GUIScript : MonoBehaviour {
         style.fontSize = 60;
 
         flagScript = checkTarget.GetComponent<FlagScript>();
-		dwalfScript = dwalfObject.GetComponent<DwalfScript>();
+		dwarfScript = dwalfObject.GetComponent<DwarfScript>();
         goalScript = goalObject.GetComponent<GoalScript>();
 	}
 	
