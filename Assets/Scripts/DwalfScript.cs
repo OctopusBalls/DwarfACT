@@ -19,6 +19,9 @@ public class DwalfScript: MonoBehaviour {
 	float stoppingDistance = 0.5f;
 	float forwardDistance = 0.1f;
     bool flagHit = false;
+    bool rightButton = false;
+    bool leftButton = false;
+    //rightButtonとleftButtonは押されているとtrue 押されていないとfalse
 
     // Use this for initialization
     void Start () {
@@ -34,7 +37,9 @@ public class DwalfScript: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+
         InvokeRepeating("ResetTimer", Random.Range(0.0f, 5.0f), Random.Range(1.0f, 5.0f));
+
         /*if(m_characterController != null)
         {
             if (!rayCube.GetComponent<Hit_DetectionScript>().meshHit)
@@ -94,5 +99,29 @@ public class DwalfScript: MonoBehaviour {
     {
         angels *= -1;
         CancelInvoke("ResetTimer");
+    }
+
+    public void OnRightDown()
+    {
+        rightButton = true;
+        Debug.Log("rightDown");
+    }
+
+    public void OnRightUp()
+    {
+        rightButton = false;
+        Debug.Log("rightUp");
+    }
+
+    public void OnLeftDown()
+    {
+        leftButton = true;
+        Debug.Log("leftDown");
+    }
+
+    public void OnLeftUp()
+    {
+        rightButton = false;
+        Debug.Log("leftUp");
     }
 }
