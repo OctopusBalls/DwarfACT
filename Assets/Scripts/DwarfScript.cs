@@ -40,26 +40,22 @@ public class DwarfScript: MonoBehaviour {
     public void OnRightUp()
     {
         rightButton = false;
-        Debug.Log("rightUp false");
     }
 
     public void OnLeftUp()
     {
         leftButton = false;
-        Debug.Log("leftUp false");
     }
 
     public void OnRightDown()
     {
         rightButton = true;
-        Debug.Log("rightDown true");
     }
 
 
     public void OnLeftDown()
     {
         leftButton = true;
-        Debug.Log("leftDown true");
     }
 
 
@@ -68,42 +64,35 @@ public class DwarfScript: MonoBehaviour {
 
         if(rightButton)
         {
-            this.transform.eulerAngles += new Vector3(0.0f, 5.0f, 0.0f);
+            this.transform.eulerAngles += new Vector3(0.0f, 4.0f, 0.0f);
             Debug.Log("押されています");
         }
 
         if(leftButton)
         {
-            this.transform.eulerAngles += new Vector3(0.0f, -5.0f, 0.0f);
+            this.transform.eulerAngles += new Vector3(0.0f, -4.0f, 0.0f);
         }
 
-        //Debug.Log(leftButton);
-        //Debug.Log(rightButton);
+        InvokeRepeating("ResetAngles", Random.Range(0.0f, 5.0f), Random.Range(1.0f, 5.0f));
 
-        //InvokeRepeating("ResetAngles", Random.Range(0.0f, 5.0f), Random.Range(1.0f, 5.0f));
-
-        /*if(m_characterController != null)
+        if(m_characterController != null)
         {
             if (!rayCube.GetComponent<Hit_DetectionScript>().meshHit)
             {
-                //moveDirection = m_characterController.transform.position;
-                rayCube.GetComponent<Hit_DetectionScript>().meshHit = true;
-            }
-            else
-            {
-                moveDirection = target.transform.position - m_characterController.transform.position;
-				moveDirection.y -= 9.8f;
+                this.transform.position += new Vector3(0.0f, -0.5f, 0.0f);
+                //rayCube.GetComponent<Hit_DetectionScript>().meshHit = true;
             }
 
             if (!flagHit)
             {
-                moveDirection.y -= 9.8f;
-                transform.LookAt(new Vector3(lookTarget.transform.position.x, transform.position.y, lookTarget.transform.position.z));
-                m_characterController.Move(moveDirection * Time.deltaTime);
+                //this.transform.position += new Vector3(0.0f,-2.0f,0.0f);
+                
             }
-        }*/
-
-        //this.transform.eulerAngles += angels;
+        }
+        this.transform.eulerAngles += angels;
+        
+        m_characterController.Move(this.transform.forward * 0.2f * Time.deltaTime);
+        
 
         if (!flagHit)
         {

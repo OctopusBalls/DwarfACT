@@ -109,7 +109,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4706295623026300, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 6
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 4706295623026300, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -139,6 +139,11 @@ Prefab:
     - target: {fileID: 1512311051412210, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
       propertyPath: m_TagString
       value: Yama
+      objectReference: {fileID: 0}
+    - target: {fileID: 135310611597424708, guid: 26fc271620ad7c74ab7023f0e3341ffb,
+        type: 2}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
