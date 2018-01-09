@@ -113,6 +113,7 @@ public class DwarfScript: MonoBehaviour {
         if (hit.gameObject.tag == "Flag")
         {
             flagHit = true;
+            Debug.Log("flagHit");
         }
         else
         {
@@ -123,6 +124,7 @@ public class DwarfScript: MonoBehaviour {
         if(hit.gameObject.tag == "Yama")
         {
             hit.gameObject.GetComponent<ScoreManager>().AddScore(10);
+            Debug.Log("YamaHit");
         }
     }
 
