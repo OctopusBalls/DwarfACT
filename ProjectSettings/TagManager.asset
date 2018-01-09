@@ -8,6 +8,8 @@ TagManager:
   - Door
   - Moon
   - Flag
+  - Yama
+  - Pikcy
   layers:
   - Default
   - TransparentFX

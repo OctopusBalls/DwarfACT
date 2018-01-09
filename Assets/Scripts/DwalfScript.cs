@@ -77,5 +77,11 @@ public class DwalfScript: MonoBehaviour {
         {
             flagHit = false;
         }
+        
+        //Yamaに当たった場合、ScoreManagerのAddScoreを実行
+        if(hit.gameObject.tag == "Yama")
+        {
+            hit.gameObject.GetComponent<ScoreManager>().AddScore(10);
+        }
     }
 }
