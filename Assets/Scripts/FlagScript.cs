@@ -31,6 +31,7 @@ public class FlagScript : MonoBehaviour {
             touchCheck = true;
             if(p == TouchPhase.Began && setFlag == false)
             {
+                setFlag = true;
                 StartCoroutine(FindPlane(t.position));
             }
         }
@@ -58,7 +59,12 @@ public class FlagScript : MonoBehaviour {
             cam.transform.position.z - cloneFlag.transform.position.z).normalized;
         OKButton.SetActive(true);
         CancelButton.SetActive(true);
-        setFlag = true;
+    }
+
+    public void OnClick()
+    {
+        setFlag = false;
+        GameObject.Destroy(cloneFlag);
     }
     
 }
