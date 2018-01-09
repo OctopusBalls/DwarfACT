@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 135310611597424708}
   m_Layer: 0
   m_Name: Yama
-  m_TagString: Untagged
+  m_TagString: Yama
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
