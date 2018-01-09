@@ -17,4 +17,9 @@ public class ScoreManager : MonoBehaviour {
 	void Update () {
         scoreText.text = gameScore.ToString();
 	}
+
+    public void AddScore(int score)
+    {
+        gameScore += score;
+    }
 }
