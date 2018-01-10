@@ -13,15 +13,15 @@ public class DrawResult : MonoBehaviour {
 	void Start ()
     {
         int nowScore = CountdownTimer.getNowTime();
-        timeText.text = nowScore.ToString();
+        timeText.text = nowScore.ToString("D3");
         //RollNumber(nowScore, timeText);
 
         int gameScore = ScoreManager.getScore();
-        scoreText.text = gameScore.ToString();
+        scoreText.text = gameScore.ToString("D3");
         //RollNumber(gameScore, scoreText);
 
         int totalScore = nowScore + gameScore;
-        totalText.text = totalScore.ToString();
+        totalText.text = totalScore.ToString("D3");
         //RollNumber(totallScore, totalText);
 ;	}
 	
