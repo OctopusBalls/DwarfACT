@@ -22,13 +22,13 @@ public class Hit_DetectionScript : MonoBehaviour {
 		Debug.DrawRay(ray.origin, transform.up * -maxDistance , Color.red, 1.0f, false);
 		if(!Physics.Raycast(ray,out hit,maxDistance))
         {
-            Debug.Log("メッシュが先にない");
-            dwalf.gameObject.GetComponent<DwalfScript>().moveDirection = Vector3.zero;
+            //Debug.Log("メッシュが先にない");
+            dwalf.gameObject.GetComponent<DwarfScript>().moveDirection = Vector3.zero;
             meshHit = false;
         }
         else
         {
-            Debug.Log("メッシュが先にある");
+            //Debug.Log("メッシュが先にある");
             //dwalf.gameObject.GetComponent<DwalfScript>().moveDirection.y += 0.1f;
             meshHit = true;
         }
