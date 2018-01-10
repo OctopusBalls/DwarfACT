@@ -109,7 +109,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4706295623026300, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.792
+      value: 1.333
       objectReference: {fileID: 0}
     - target: {fileID: 4706295623026300, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -296,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f0c8ed21c8ed54d97f65fc3805da69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limitTime: 180
+  limitTime: 10
   sourceText: {fileID: 2053486149}
 --- !u!4 &207211072
 Transform:
