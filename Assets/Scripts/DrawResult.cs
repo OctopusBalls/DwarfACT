@@ -20,8 +20,8 @@ public class DrawResult : MonoBehaviour {
         scoreText.text = gameScore.ToString();
         //RollNumber(gameScore, scoreText);
 
-        int totallScore = nowScore + gameScore;
-        totalText.text = totallScore.ToString();
+        int totalScore = nowScore + gameScore;
+        totalText.text = totalScore.ToString();
         //RollNumber(totallScore, totalText);
 ;	}
 	
