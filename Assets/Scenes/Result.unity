@@ -696,6 +696,7 @@ GameObject:
   - component: {fileID: 771090506}
   - component: {fileID: 771090508}
   - component: {fileID: 771090507}
+  - component: {fileID: 771090509}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -760,6 +761,20 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 771090505}
+--- !u!114 &771090509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 771090505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8109b863e54161246b65b7b98e6d482f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeText: {fileID: 431314946}
+  scoreText: {fileID: 117301791}
+  TotalText: {fileID: 665182428}
 --- !u!1 &1128421782
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,7 +786,7 @@ GameObject:
   - component: {fileID: 1128421785}
   - component: {fileID: 1128421784}
   m_Layer: 5
-  m_Name: BonusText
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -827,7 +842,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "BONUS\t ... "
+  m_Text: "SCORE\t ... "
 --- !u!222 &1128421785
 CanvasRenderer:
   m_ObjectHideFlags: 0

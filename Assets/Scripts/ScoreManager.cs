@@ -23,5 +23,5 @@ public class ScoreManager : MonoBehaviour {
         gameScore += score;
     }
 
-    public static int GetGameScore { get { return gameScore; } }
+    public static int getScore() { return gameScore; }
 }
