@@ -11,6 +11,6 @@ public class StarRotationScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        this.transform.eulerAngles += new Vector3(0.0f, 10.0f, 0.0f);
+        this.transform.eulerAngles += new Vector3(0.0f, 12.0f, 0.0f);
 	}
 }
