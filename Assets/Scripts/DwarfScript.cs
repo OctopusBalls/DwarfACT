@@ -17,7 +17,8 @@ public class DwarfScript: MonoBehaviour {
     private Vector3 angels;
 
 
-	float speed = 0.5f;
+	float speed = 0.3f;
+    float rotationSpeed = 8.0f;
 	float jumpOffHeight = 2.0f;
 	float stoppingDistance = 0.5f;
 	float forwardDistance = 0.1f;
@@ -33,7 +34,7 @@ public class DwarfScript: MonoBehaviour {
         rayCube = transform.FindChild("Cube").gameObject;
         FlagCube = GameObject.Find("FlagCube");
         stayAnim = this.gameObject.GetComponent<Animation>();
-        angels = new Vector3(0.0f, 3.0f, 0.0f);
+        angels = new Vector3(0.0f, rotationSpeed, 0.0f);
 
     }
 
@@ -64,16 +65,16 @@ public class DwarfScript: MonoBehaviour {
 
         if(rightButton)
         {
-            this.transform.eulerAngles += new Vector3(0.0f, 4.0f, 0.0f);
+            this.transform.eulerAngles += new Vector3(0.0f, rotationSpeed, 0.0f);
             Debug.Log("押されています");
         }
 
         if(leftButton)
         {
-            this.transform.eulerAngles += new Vector3(0.0f, -4.0f, 0.0f);
+            this.transform.eulerAngles += new Vector3(0.0f, rotationSpeed * -1.0f, 0.0f);
         }
 
-        InvokeRepeating("ResetAngles", Random.Range(0.0f, 2.0f), Random.Range(1.0f, 3.0f));
+        InvokeRepeating("ResetAngles", Random.Range(0.0f, 2.0f), Random.Range(0.0f, 2.0f));
 
         if(m_characterController != null)
         {
@@ -90,7 +91,7 @@ public class DwarfScript: MonoBehaviour {
         }
         this.transform.eulerAngles += angels;
         
-        m_characterController.Move(this.transform.forward * 0.2f * Time.deltaTime);
+        m_characterController.Move(this.transform.forward * speed * Time.deltaTime);
         
 
         if (!flagHit)
