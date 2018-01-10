@@ -85,8 +85,7 @@ public class DwarfScript: MonoBehaviour {
 
             if (!flagHit)
             {
-                //this.transform.position += new Vector3(0.0f,-2.0f,0.0f);
-                
+              
             }
         }
         this.transform.eulerAngles += angels;
@@ -113,7 +112,6 @@ public class DwarfScript: MonoBehaviour {
         if (hit.gameObject.tag == "Flag")
         {
             flagHit = true;
-            Debug.Log("flagHit");
         }
         else
         {
@@ -123,8 +121,9 @@ public class DwarfScript: MonoBehaviour {
         //Yamaに当たった場合、ScoreManagerのAddScoreを実行
         if(hit.gameObject.tag == "Yama")
         {
-            hit.gameObject.GetComponent<ScoreManager>().AddScore(10);
-            Debug.Log("YamaHit");
+            GameObject scoreManager = GameObject.Find("ScoreManager");
+            scoreManager.GetComponent<ScoreManager>().AddScore(10);
+            //hit.gameObject.GetComponent<ScoreManager>().AddScore(10);
         }
     }
 

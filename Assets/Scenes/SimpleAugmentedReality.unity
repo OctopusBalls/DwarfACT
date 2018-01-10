@@ -101,7 +101,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4706295623026300, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0.35
       objectReference: {fileID: 0}
     - target: {fileID: 4706295623026300, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
       propertyPath: m_LocalPosition.y
@@ -109,7 +109,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4706295623026300, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 2.5
+      value: 3.96
       objectReference: {fileID: 0}
     - target: {fileID: 4706295623026300, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
       propertyPath: m_LocalRotation.x
@@ -145,7 +145,8 @@ Prefab:
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 135310611597424708, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 26fc271620ad7c74ab7023f0e3341ffb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &74615523 stripped
@@ -488,6 +489,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &346280725 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1512311051412210, guid: 26fc271620ad7c74ab7023f0e3341ffb,
+    type: 2}
+  m_PrefabInternal: {fileID: 36447461}
+--- !u!54 &346280726
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346280725}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
+--- !u!65 &346280728
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 346280725}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.1, z: 0.25}
+  m_Center: {x: 0, y: 0.05, z: 0}
 --- !u!1 &375220171
 GameObject:
   m_ObjectHideFlags: 0
@@ -804,6 +837,11 @@ Prefab:
     - target: {fileID: 4681477439528138, guid: 0087d052d735c21489cf11db53ac76fe, type: 2}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 65565790193218436, guid: 0087d052d735c21489cf11db53ac76fe,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0087d052d735c21489cf11db53ac76fe, type: 2}
@@ -1534,15 +1572,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 25af08872ba804148b08381a7e6a876e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.395
+      value: -0.068
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 25af08872ba804148b08381a7e6a876e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.192
+      value: 0.075
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 25af08872ba804148b08381a7e6a876e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.716
+      value: 1.303
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 25af08872ba804148b08381a7e6a876e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1566,7 +1604,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 25af08872ba804148b08381a7e6a876e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 25af08872ba804148b08381a7e6a876e, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 25af08872ba804148b08381a7e6a876e, type: 3}
@@ -1919,7 +1961,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1739296789}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
