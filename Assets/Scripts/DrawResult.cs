@@ -13,13 +13,16 @@ public class DrawResult : MonoBehaviour {
 	void Start ()
     {
         int nowScore = CountdownTimer.getNowTime();
-        RollNumber(nowScore, timeText);
+        timeText.text = nowScore.ToString();
+        //RollNumber(nowScore, timeText);
 
         int gameScore = ScoreManager.getScore();
-        RollNumber(gameScore, scoreText);
+        scoreText.text = gameScore.ToString();
+        //RollNumber(gameScore, scoreText);
 
         int totallScore = nowScore + gameScore;
-        RollNumber(totallScore, totalText);
+        totalText.text = totallScore.ToString();
+        //RollNumber(totallScore, totalText);
 ;	}
 	
 	// Update is called once per frame
@@ -27,7 +30,7 @@ public class DrawResult : MonoBehaviour {
 		
 	}
 
-    private void RollNumber(int max, Text* OutText)
+    private void RollNumber(int max, Text OutText)
     {
         for(int i = 0; i < max; i++)
         {

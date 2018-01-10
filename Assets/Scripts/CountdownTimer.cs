@@ -40,5 +40,5 @@ public class CountdownTimer : MonoBehaviour {
         }
     }
 
-    public static float getNowTime() { return nowTime; }
+    public static int getNowTime() { return nowTime; }
 }
