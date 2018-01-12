@@ -774,11 +774,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeText: {fileID: 431314946}
   scoreText: {fileID: 117301791}
-<<<<<<< HEAD
   TotalText: {fileID: 665182428}
-=======
-  totalText: {fileID: 665182428}
->>>>>>> origin/develop
 --- !u!1 &1128421782
 GameObject:
   m_ObjectHideFlags: 0
