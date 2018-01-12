@@ -36,6 +36,9 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
     //マーカーの大きさ（メートル単位）
     const double markerSize = 0.14;
 
+    public static int flagOfNumber;
+    public static int getFlagOfNumber() { return flagOfNumber; }
+
 	// Use this for initialization
 	void Start () {
         //Tangoで起きたイベントを受け取れるように登録
@@ -53,6 +56,10 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         //doorHeight = doorModel.transform.lossyScale.y;
         dwarfHeight = dwarfModel.transform.lossyScale.y;
         flagHeight = flagModel.transform.lossyScale.y;
+
+        
+        flagOfNumber = 0;
+        //次はドワーフの得点の追加
         
     }
 	
