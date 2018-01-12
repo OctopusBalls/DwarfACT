@@ -1038,6 +1038,10 @@ public class TangoDynamicMesh : MonoBehaviour, ITango3DReconstruction
 
         m_bounds.SetMinMax(min, max);
     }
+
+	public void OnClick(){
+		this.Clear ();
+	}
     
     /// <summary>
     /// Component for a dynamic, resizable mesh.

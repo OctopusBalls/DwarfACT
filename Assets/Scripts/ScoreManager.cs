@@ -15,7 +15,7 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        scoreText.text = gameScore.ToString();
+        scoreText.text = gameScore.ToString("D3");
 	}
 
     public void AddScore(int score)
@@ -23,5 +23,5 @@ public class ScoreManager : MonoBehaviour {
         gameScore += score;
     }
 
-    public static int GetGameScore { get { return gameScore; } }
+    public static int getScore() { return gameScore; }
 }

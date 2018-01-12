@@ -8,11 +8,15 @@ public class CountdownTimer : MonoBehaviour {
     public float limitTime;
     public Text sourceText;
 
+    private static int nowTime;
+
     // Use this for initialization
     void Start()
     {
         //limitTime = 180.0f;
         //limitTime = 10.0f;
+
+        nowTime = 0;
     }
 
     // Update is called once per frame
@@ -30,9 +34,11 @@ public class CountdownTimer : MonoBehaviour {
             sourceText.text = minute.ToString() + ":" + second.ToString();
             */
 
-            int nowTime = (int)limitTime;
+            nowTime = (int)limitTime;
             sourceText.text = nowTime.ToString("D3");
             limitTime -= Time.deltaTime;
         }
     }
+
+    public static int getNowTime() { return nowTime; }
 }

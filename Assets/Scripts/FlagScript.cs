@@ -44,10 +44,7 @@ public class FlagScript : MonoBehaviour {
             yield break;
         }
         cloneFlag.transform.position = pos;
-         cloneFlag.transform.forward = new Vector3(
-            cam.transform.position.x - cloneFlag.transform.position.x,
-            0,
-            cam.transform.position.z - cloneFlag.transform.position.z).normalized;
+         cloneFlag.transform.forward = new Vector3(cam.transform.position.x - cloneFlag.transform.position.x, 0,cam.transform.position.z - cloneFlag.transform.position.z).normalized;
         CancelButton.SetActive(true);
     }
 
@@ -55,6 +52,7 @@ public class FlagScript : MonoBehaviour {
     {
         setFlag = false;
         GameObject.Destroy(cloneFlag);
+		CancelButton.SetActive (false);
     }
     
 }

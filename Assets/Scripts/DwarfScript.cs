@@ -13,15 +13,14 @@ public class DwarfScript: MonoBehaviour {
     public Vector3 moveDirection;
     private Animation stayAnim;
     private GameObject rayCube;
-    private GameObject FlagCube;
+    private GameObject flagCube;
+	private GameObject scoreManager;
     private Vector3 angels;
 
 
-	float speed = 0.3f;
-    float rotationSpeed = 8.0f;
-	float jumpOffHeight = 2.0f;
-	float stoppingDistance = 0.5f;
-	float forwardDistance = 0.1f;
+	public float speed = 0.1f;
+    float rotationSpeed = 6.0f;
+	int dwarfFallCount = 0;
     bool flagHit = false;
     static bool rightButton = false;
     static bool leftButton = false;
@@ -32,7 +31,8 @@ public class DwarfScript: MonoBehaviour {
 
         m_characterController = GetComponent<CharacterController>();
         rayCube = transform.FindChild("Cube").gameObject;
-        FlagCube = GameObject.Find("FlagCube");
+        flagCube = GameObject.Find("FlagCube");
+		scoreManager = GameObject.Find("ScoreManager");
         stayAnim = this.gameObject.GetComponent<Animation>();
         angels = new Vector3(0.0f, rotationSpeed, 0.0f);
 
@@ -65,35 +65,30 @@ public class DwarfScript: MonoBehaviour {
 
         if(rightButton)
         {
-            this.transform.eulerAngles += new Vector3(0.0f, rotationSpeed, 0.0f);
-            Debug.Log("押されています");
+			this.transform.eulerAngles += new Vector3(0.0f, rotationSpeed + 2.0f, 0.0f);
         }
 
         if(leftButton)
         {
-            this.transform.eulerAngles += new Vector3(0.0f, rotationSpeed * -1.0f, 0.0f);
+			this.transform.eulerAngles += new Vector3(0.0f, (rotationSpeed + 2.0f) * -1.0f, 0.0f);
         }
 
         InvokeRepeating("ResetAngles", Random.Range(0.0f, 2.0f), Random.Range(0.0f, 2.0f));
 
         if(m_characterController != null)
         {
+			//メッシュがなかった場合
             if (!rayCube.GetComponent<Hit_DetectionScript>().meshHit)
             {
-                this.transform.position += new Vector3(0.0f, -0.5f, 0.0f);
+                this.transform.position += new Vector3(0.0f, -0.1f, 0.0f);
+				dwarfFallCount++;
                 //rayCube.GetComponent<Hit_DetectionScript>().meshHit = true;
             }
-
-            if (!flagHit)
-            {
-              
-            }
         }
-        this.transform.eulerAngles += angels;
-        
+
+        this.transform.eulerAngles += angels;        
         m_characterController.Move(this.transform.forward * speed * Time.deltaTime);
         
-
         if (!flagHit)
         {
             //移動アニメーション再生
@@ -108,6 +103,8 @@ public class DwarfScript: MonoBehaviour {
             stayAnim.Play("Idle");
         }
     }
+
+	//CharacterControllerがColliderに触れた場合に実行
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.gameObject.tag == "Flag")
@@ -122,9 +119,17 @@ public class DwarfScript: MonoBehaviour {
         //Yamaに当たった場合、ScoreManagerのAddScoreを実行
         if(hit.gameObject.tag == "Yama")
         {
-            GameObject scoreManager = GameObject.Find("ScoreManager");
             scoreManager.GetComponent<ScoreManager>().AddScore(10);
             //hit.gameObject.GetComponent<ScoreManager>().AddScore(10);
+        }
+    }
+
+	//IsTriggerになっている山に触れた瞬間に実行
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Yama")
+        {
+            scoreManager.GetComponent<ScoreManager>().AddScore(10);
         }
     }
 
