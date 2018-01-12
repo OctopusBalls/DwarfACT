@@ -73,7 +73,7 @@ public class DwarfScript: MonoBehaviour {
 			this.transform.eulerAngles += new Vector3(0.0f, (rotationSpeed + 2.0f) * -1.0f, 0.0f);
         }
 
-        InvokeRepeating("ResetAngles", Random.Range(0.0f, 2.0f), Random.Range(0.0f, 2.0f));
+        //InvokeRepeating("ResetAngles", Random.Range(0.0f, 2.0f), Random.Range(0.0f, 2.0f));
 
         if(m_characterController != null)
         {
@@ -86,7 +86,7 @@ public class DwarfScript: MonoBehaviour {
             }
         }
 
-        this.transform.eulerAngles += angels;        
+        //this.transform.eulerAngles += angels;        
         m_characterController.Move(this.transform.forward * speed * Time.deltaTime);
         
         if (!flagHit)
