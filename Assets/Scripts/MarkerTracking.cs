@@ -20,12 +20,12 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
     //表示させるモデル
     GameObject doorModel;
     GameObject dwarfModel;
-    GameObject yamaModel;
+    GameObject flagModel;
 
     //表示させるモデルの大きさ（メートル単位）
     float doorHeight;
     float dwarfHeight;
-    float yamaHeight;
+    float flagHeight;
 	float height;
 
     bool doorCreateFlag = false;
@@ -47,12 +47,12 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         //表示するモデルをスクリプト内で使用できるように
         //doorModel = GameObject.Find("Door");
         dwarfModel = GameObject.Find("Dwarf");
-        yamaModel = GameObject.Find("Yama2");
+        flagModel = GameObject.Find("Flag");
 
         //モデルの高さを取得（OnTangoImageAvailable...で使用）
         //doorHeight = doorModel.transform.lossyScale.y;
         dwarfHeight = dwarfModel.transform.lossyScale.y;
-        yamaHeight = yamaModel.transform.lossyScale.y;
+        flagHeight = flagModel.transform.lossyScale.y;
         
     }
 	
@@ -92,11 +92,11 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
                 //case "3":
                 case "1":
                     //マーカーの位置と角度をモデルに反映
-                    yamaModel.transform.position = marker.m_translation;
-                    yamaModel.transform.rotation = marker.m_orientation;
+                    flagModel.transform.position = marker.m_translation;
+                    flagModel.transform.rotation = marker.m_orientation;
 
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    yamaModel.transform.Translate(0, yamaHeight * 0.05f + 0.1f, 0, Space.Self);
+                    flagModel.transform.Translate(0, flagHeight * 0.05f + 0.1f, 0, Space.Self);
                     break;
 
             }
