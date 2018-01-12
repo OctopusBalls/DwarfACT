@@ -106,16 +106,7 @@ public class DwarfScript: MonoBehaviour {
 
 	//CharacterControllerがColliderに触れた場合に実行
     private void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.gameObject.tag == "Flag")
-        {
-            flagHit = true;
-        }
-        else
-        {
-            flagHit = false;
-        }
-        
+    {        
         //Yamaに当たった場合、ScoreManagerのAddScoreを実行
         if(hit.gameObject.tag == "Yama")
         {
@@ -127,7 +118,7 @@ public class DwarfScript: MonoBehaviour {
 	//IsTriggerになっている山に触れた瞬間に実行
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Yama")
+        if(other.gameObject.tag == "Flag")
         {
             scoreManager.GetComponent<ScoreManager>().AddScore(10);
         }
