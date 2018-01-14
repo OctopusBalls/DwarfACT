@@ -50,7 +50,7 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         //表示するモデルをスクリプト内で使用できるように
         //doorModel = GameObject.Find("Door");
         dwarfModel = GameObject.Find("Dwarf");
-        flagModel = GameObject.Find("Flag");
+        flagModel = GameObject.Find("flag");
 
         //モデルの高さを取得（OnTangoImageAvailable...で使用）
         //doorHeight = doorModel.transform.lossyScale.y;
