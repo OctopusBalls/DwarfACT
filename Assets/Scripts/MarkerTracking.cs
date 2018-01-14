@@ -96,7 +96,7 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
                     flagModel.transform.rotation = marker.m_orientation;
 
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    flagModel.transform.Translate(0, flagHeight * 0.05f + 0.1f, 0, Space.Self);
+                    flagModel.transform.Translate(0, flagHeight * 0.05f, 0, Space.Self);
                     break;
 
             }
