@@ -12,6 +12,11 @@ public class SwitchingScenes : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (DwarfScript.GetNumberOfTookFlag() == DwarfScript.FLAG_MAX)
+        {
+            SceneManager.LoadScene("Result");
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             //現在のシーン名を取得
