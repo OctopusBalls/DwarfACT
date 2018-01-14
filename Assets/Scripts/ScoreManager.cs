@@ -15,7 +15,8 @@ public class ScoreManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        scoreText.text = gameScore.ToString("D3");
+        //DwarfScriptから取得
+        scoreText.text = DwarfScript.GetNumberOfTookFlag().ToString();
 	}
 
     public void AddScore(int score)

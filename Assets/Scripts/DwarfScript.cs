@@ -26,6 +26,11 @@ public class DwarfScript: MonoBehaviour {
     static bool leftButton = false;
     //rightButtonとleftButtonは押されているとtrue 押されていないとfalse
 
+    public const int FLAG_MAX = 7;
+
+    private static int numberOfTookFlag;
+    public static int GetNumberOfTookFlag() { return numberOfTookFlag; }
+
     // Use this for initialization
     void Start () {
 
@@ -120,7 +125,9 @@ public class DwarfScript: MonoBehaviour {
     {
         if(other.gameObject.tag == "Flag")
         {
-            scoreManager.GetComponent<ScoreManager>().AddScore(10);
+            //scoreManager.GetComponent<ScoreManager>().AddScore(10);
+            numberOfTookFlag += 1;
+            Object.Destroy(other.gameObject);
         }
     }
 
