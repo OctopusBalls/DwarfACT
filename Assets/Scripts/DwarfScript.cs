@@ -114,9 +114,10 @@ public class DwarfScript: MonoBehaviour {
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {        
         //Yamaに当たった場合、ScoreManagerのAddScoreを実行
-        if(hit.gameObject.tag == "Yama")
+        if(hit.gameObject.tag == "Flag")
         {
-            scoreManager.GetComponent<ScoreManager>().AddScore(10);
+            numberOfTookFlag += 1;
+            //scoreManager.GetComponent<ScoreManager>().AddScore(1);
             //hit.gameObject.GetComponent<ScoreManager>().AddScore(10);
         }
     }
