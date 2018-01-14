@@ -16,8 +16,7 @@ public class SwitchingScenes : MonoBehaviour {
         {
             SceneManager.LoadScene("Result");
         }
-
-        if (Input.GetMouseButtonDown(0))
+        else if (Input.GetMouseButtonDown(0))
         {
             //現在のシーン名を取得
             switch (SceneManager.GetActiveScene().name)
