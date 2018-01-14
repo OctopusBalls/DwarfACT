@@ -26,6 +26,12 @@ public class DwarfScript: MonoBehaviour {
     static bool leftButton = false;
     //rightButtonとleftButtonは押されているとtrue 押されていないとfalse
 
+    private const int FLAG_MAX = 7;
+    public int GetMaxFlag() { return FLAG_MAX; }
+
+    private static int numberOfTookFlag;
+    public static int GetNumberOfTookFlag() { return numberOfTookFlag; }
+
     // Use this for initialization
     void Start () {
 
