@@ -28,7 +28,7 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
     /// MarkerInfo
     /// </summary>
     //マーカーの大きさ（メートル単位）
-    const double markerSize = 0.14;
+    const double markerSize = 0.035;
 
 	// Use this for initialization
 	void Start () {
