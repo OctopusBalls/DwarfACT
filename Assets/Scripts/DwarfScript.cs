@@ -10,11 +10,12 @@ public class DwarfScript: MonoBehaviour {
     [SerializeField]
     public GameObject target;
     public Transform lookTarget;
+    public GameObject flagCreate;
     public Vector3 moveDirection;
     private Animation stayAnim;
     private GameObject rayCube;
     private GameObject flagCube;
-	private GameObject scoreManager;
+	private GameObject scoreManager;    
     private Vector3 angels;
 
 
@@ -37,7 +38,8 @@ public class DwarfScript: MonoBehaviour {
         m_characterController = GetComponent<CharacterController>();
         rayCube = transform.FindChild("Cube").gameObject;
         flagCube = GameObject.Find("FlagCube");
-		scoreManager = GameObject.Find("ScoreManager");
+		scoreManager = GameObject.Find("Canvas").transform.Find("Panel").gameObject;
+        flagCreate = GameObject.Find("FlagCreate");
         stayAnim = this.gameObject.GetComponent<Animation>();
         angels = new Vector3(0.0f, rotationSpeed, 0.0f);
 
@@ -127,8 +129,10 @@ public class DwarfScript: MonoBehaviour {
         if(other.gameObject.tag == "Flag")
         {
             //scoreManager.GetComponent<ScoreManager>().AddScore(10);
-            numberOfTookFlag += 1;
-            Object.Destroy(other.gameObject);
+            Destroy(other.gameObject);
+            //flagCreate.GetComponent<FlagScript>().flagScore += 1;
+            scoreManager.GetComponent<ScoreManager>().AddScore(1);
+            //numberOfTookFlag += 1;
         }
     }
 

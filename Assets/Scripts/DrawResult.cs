@@ -16,7 +16,7 @@ public class DrawResult : MonoBehaviour {
         timeText.text = nowScore.ToString();
         //RollNumber(nowScore, timeText);
 
-        int gameScore = DwarfScript.GetNumberOfTookFlag();
+        int gameScore = ScoreManager.GetScore();
         scoreText.text = gameScore.ToString();
         //RollNumber(gameScore, scoreText);
 

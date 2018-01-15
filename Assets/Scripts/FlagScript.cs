@@ -9,6 +9,7 @@ public class FlagScript : MonoBehaviour {
     public Plane plane;
     public GameObject Flag;
     private GameObject cloneFlag;
+    public int flagScore = 0;
     GameObject CancelButton;
     public bool setFlag = false;
 

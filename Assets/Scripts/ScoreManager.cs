@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
     public Text scoreText;
-    private static int gameScore;
+    public static int gameScore;
 
 	// Use this for initialization
 	void Start () {
@@ -16,13 +16,15 @@ public class ScoreManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //DwarfScriptから取得
-        scoreText.text = DwarfScript.GetNumberOfTookFlag().ToString();
+        //scoreText.text = DwarfScript.GetNumberOfTookFlag().ToString();
+        scoreText.text = gameScore.ToString();
 	}
 
     public void AddScore(int score)
     {
-        gameScore += score;
+        //gameScore += score;
+        gameScore++;
     }
 
-    public static int getScore() { return gameScore; }
+    public static int GetScore() { return gameScore; }
 }
