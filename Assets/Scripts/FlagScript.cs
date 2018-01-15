@@ -14,7 +14,7 @@ public class FlagScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        CancelButton = GameObject.Find("CancelButton");
+        CancelButton = GameObject.Find("Canvas").transform.Find("Panel").transform.Find("CancelButton").gameObject;
         CancelButton.SetActive(false);
     }
 	
@@ -28,6 +28,7 @@ public class FlagScript : MonoBehaviour {
             {
                 setFlag = true;
                 StartCoroutine(FindPlane(t.position));
+                CancelButton.SetActive(true);
             }
         }
         
@@ -45,14 +46,14 @@ public class FlagScript : MonoBehaviour {
         }
         cloneFlag.transform.position = pos;
          cloneFlag.transform.forward = new Vector3(cam.transform.position.x - cloneFlag.transform.position.x, 0,cam.transform.position.z - cloneFlag.transform.position.z).normalized;
-        CancelButton.SetActive(true);
+        
     }
 
     public void OnClick()
     {
         setFlag = false;
         GameObject.Destroy(cloneFlag);
-		CancelButton.SetActive (false);
+		CancelButton.SetActive(false);
     }
     
 }

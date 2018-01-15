@@ -1281,7 +1281,7 @@ MonoBehaviour:
   target: {fileID: 1788440933534278, guid: f6fac28792b813543bd37b3be1b3f25b, type: 2}
   lookTarget: {fileID: 4197930948545352, guid: f6fac28792b813543bd37b3be1b3f25b, type: 2}
   moveDirection: {x: 0, y: 0, z: 0}
-  speed: 0.1
+  speed: 0.15
 --- !u!137 &137527675387817480
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
