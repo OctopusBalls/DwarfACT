@@ -12,7 +12,9 @@ public class SwitchingScenes : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (DwarfScript.GetNumberOfTookFlag() == DwarfScript.FLAG_MAX)
+
+        /*
+        if (DwarfScript.GetNumberOfTookFlag() == 1 && (SceneManager.GetActiveScene().name == "SimpleAugmentedReality"))//DwarfScript.FLAG_MAX)
         {
             SceneManager.LoadScene("Result");
         }
@@ -32,6 +34,22 @@ public class SwitchingScenes : MonoBehaviour {
 
             }
 
+        }
+        */
+
+        switch (SceneManager.GetActiveScene().name)
+        {
+            case "StartMenu":
+                if(Input.GetMouseButtonDown(0)) SceneManager.LoadScene("SimpleAugmentedReality");
+                break;
+
+            case "Result":
+                if (Input.GetMouseButtonDown(0)) SceneManager.LoadScene("StartMenu");
+                break;
+
+            case "SimpleAugmentedReality":
+                if (Input.GetMouseButtonDown(0) && DwarfScript.GetNumberOfTookFlag() == 1) SceneManager.LoadScene("Result");
+                break;
         }
 	}
 }

@@ -18,13 +18,9 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
     /// Models
     /// </summary>
     //表示させるモデル
-    GameObject doorModel;
-    GameObject dwarfModel;
-    GameObject flagModel;
+    GameObject[] flagModel;
 
     //表示させるモデルの大きさ（メートル単位）
-    float doorHeight;
-    float dwarfHeight;
     float flagHeight;
 	float height;
 
@@ -45,14 +41,18 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         markers = new List<TangoSupport.Marker>();
         
         //表示するモデルをスクリプト内で使用できるように
-        //doorModel = GameObject.Find("Door");
-        dwarfModel = GameObject.Find("Dwarf");
-        flagModel = GameObject.Find("flag");
+        flagModel = new GameObject[DwarfScript.FLAG_MAX]{
+            GameObject.Find("Flag_Blue"),
+            GameObject.Find("Flag_Green"),
+            GameObject.Find("Flag_LightBlue"),
+            GameObject.Find("Flag_Orange"),
+            GameObject.Find("Flag_Perple"),
+            GameObject.Find("Flag_Pink"),
+            GameObject.Find("Flag_Red")
+        };
 
         //モデルの高さを取得（OnTangoImageAvailable...で使用）
-        //doorHeight = doorModel.transform.lossyScale.y;
-        dwarfHeight = dwarfModel.transform.lossyScale.y;
-        flagHeight = flagModel.transform.lossyScale.y;
+        flagHeight = flagModel[0].transform.lossyScale.y;
         
     }
 	
@@ -69,34 +69,13 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
 
             switch (marker.m_content)
             {
-                //case "1":
-                case "2":
-                    //マーカーの位置と角度をモデルに反映
-                    /*doorModel.transform.position = marker.m_translation;
-                    doorModel.transform.rotation = marker.m_orientation;
-                    
-                    //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    doorModel.transform.Translate(0, doorHeight * 0.001f, 0, Space.Self); */
-                    break;
-
-                //case "2":
-                case "3":
-                    //マーカーの位置と角度をモデルに反映
-                    dwarfModel.transform.position = marker.m_translation;
-                    dwarfModel.transform.rotation = marker.m_orientation;
-
-                    //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    dwarfModel.transform.Translate(0, dwarfHeight * 0.5f, 0, Space.Self);
-                    break;
-
-                //case "3":
                 case "1":
                     //マーカーの位置と角度をモデルに反映
-                    flagModel.transform.position = marker.m_translation;
-                    flagModel.transform.rotation = marker.m_orientation;
+                    flagModel[0].transform.position = marker.m_translation;
+                    flagModel[0].transform.rotation = marker.m_orientation;
 
                     //モデルの中心が原点に設定されていることが多いので、ここで調整
-                    flagModel.transform.Translate(0, flagHeight * 0.05f, 0, Space.Self);
+                    flagModel[0].transform.Translate(0, flagHeight * 0.05f, 0, Space.Self);
                     break;
 
             }

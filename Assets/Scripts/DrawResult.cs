@@ -12,16 +12,16 @@ public class DrawResult : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        int nowScore = CountdownTimer.getNowTime();
-        timeText.text = nowScore.ToString("D3");
+        int nowScore = CountdownTimer.GetNowTime();
+        timeText.text = nowScore.ToString();
         //RollNumber(nowScore, timeText);
 
         int gameScore = DwarfScript.GetNumberOfTookFlag();
-        scoreText.text = gameScore.ToString("D3");
+        scoreText.text = gameScore.ToString();
         //RollNumber(gameScore, scoreText);
 
         int totalScore = nowScore + gameScore;
-        totalText.text = totalScore.ToString("D3");
+        totalText.text = totalScore.ToString();
         //RollNumber(totallScore, totalText);
 	}
 	
