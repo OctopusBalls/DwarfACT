@@ -23,9 +23,7 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
     //表示させるモデルの大きさ（メートル単位）
     float flagHeight;
 	float height;
-
-    bool doorCreateFlag = false;
-
+    
     /// <summary>
     /// MarkerInfo
     /// </summary>
@@ -53,7 +51,6 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
 
         //モデルの高さを取得（OnTangoImageAvailable...で使用）
         flagHeight = flagModel[0].transform.lossyScale.y;
-        
     }
 	
     public void OnTangoImageAvailableEventHandler(TangoEnums.TangoCameraId cameraId, TangoUnityImageData imageBuffer)
