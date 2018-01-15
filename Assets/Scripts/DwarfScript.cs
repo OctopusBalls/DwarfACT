@@ -41,6 +41,8 @@ public class DwarfScript: MonoBehaviour {
         stayAnim = this.gameObject.GetComponent<Animation>();
         angels = new Vector3(0.0f, rotationSpeed, 0.0f);
 
+        numberOfTookFlag = 0;
+
     }
 
     public void OnRightUp()
