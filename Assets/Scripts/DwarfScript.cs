@@ -26,7 +26,7 @@ public class DwarfScript: MonoBehaviour {
     static bool leftButton = false;
     //rightButtonとleftButtonは押されているとtrue 押されていないとfalse
 
-    public const int FLAG_MAX = 7;
+    public const int FLAG_MAX = 1;
 
     private static int numberOfTookFlag;
     public static int GetNumberOfTookFlag() { return numberOfTookFlag; }
@@ -120,7 +120,7 @@ public class DwarfScript: MonoBehaviour {
         }
     }
 
-	//IsTriggerになっている山に触れた瞬間に実行
+	//IsTriggerになっている旗に触れた瞬間に実行
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Flag")

@@ -7,16 +7,14 @@ public class CautionCubeScript : MonoBehaviour {
 	Ray ray;
 	RaycastHit hit;
 	GameObject dwalf;
-	GameObject cautionImage;
-	GameObject cautionText;
+	GameObject caution;
 
 	public bool meshHit = true;
 	public float maxDistance = 0.5f;
 
 	// Use this for initialization
 	void Start () {
-		cautionImage = GameObject.Find ("CautionImage");
-		cautionText = GameObject.Find ("CautionText");
+        caution = GameObject.Find("Canvas").transform.Find("Panel").transform.Find("Caution").gameObject;
 		ray = new Ray(transform.position, transform.up * -0.1f);
 	}
 	
@@ -27,18 +25,18 @@ public class CautionCubeScript : MonoBehaviour {
 		Debug.DrawRay(ray.origin, transform.up * -maxDistance , Color.red, 1.0f, false);
 		if(!Physics.Raycast(ray,out hit,maxDistance))
 		{
-			//Debug.Log("メッシュが先にない");
-			//GameObject.Find("Canvas").transform.Find("Panel").transform.Find("Caution").gameObject.SetActive(true);
-			//cautionImage.SetActive(true);
-			//cautionText.SetActive (true);
+            //Debug.Log("メッシュが先にない");
+            //GameObject.Find("Canvas").transform.Find("Panel").transform.Find("Caution").gameObject.SetActive(true);
+            //cautionImage.SetActive(true);
+            //cautionText.SetActive (true);
+            caution.SetActive(true);
 			meshHit = false;
 		}
 		else
 		{
-			//Debug.Log("メッシュが先にある");
-			//GameObject.Find("Canvas").transform.Find("Panel").transform.Find("Caution").gameObject.SetActive(false);
-			cautionImage.SetActive(false);
-			cautionText.SetActive (false);
+            //Debug.Log("メッシュが先にある");
+            //GameObject.Find("Canvas").transform.Find("Panel").transform.Find("Caution").gameObject.SetActive(false);
+            caution.SetActive(false);
 			meshHit = true;
 		}
 	}

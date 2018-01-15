@@ -14,8 +14,6 @@ public class CautionScript : MonoBehaviour {
 		cautionText = GameObject.Find ("CautionText");
 		cautionCube = GameObject.Find ("CautionCube");
 		GameObject.Find("Canvas").transform.Find("Panel").transform.Find("Caution").gameObject.SetActive(false);
-		//cautionImage.SetActive (false);
-		//cautionText.SetActive (false);
 	}
 	
 	// Update is called once per frame
