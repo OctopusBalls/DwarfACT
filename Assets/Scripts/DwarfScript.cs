@@ -127,8 +127,8 @@ public class DwarfScript: MonoBehaviour {
         if(other.gameObject.tag == "Flag")
         {
             //scoreManager.GetComponent<ScoreManager>().AddScore(10);
+            Destroy(other.gameObject);
             numberOfTookFlag += 1;
-            Object.Destroy(other.gameObject);
         }
     }
 

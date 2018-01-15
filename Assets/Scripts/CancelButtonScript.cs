@@ -22,8 +22,8 @@ public class CancelButtonScript : MonoBehaviour {
     public void OnClick()
     {
         CancelButton = GameObject.Find("CancelButton");
-        cancelObject = GameObject.Find("Flag");
-        GameObject.Destroy(cancelObject);
+        //cancelObject = GameObject.Find("Flag");
+        //GameObject.Destroy(cancelObject);
         CancelButton.SetActive(false);
 		//GameObject.Find("Canvas").transform.Find("Panel").transform.Find("Caution").gameObject.SetActive(false);
         flagObject.GetComponent<FlagScript>().setFlag = false;
