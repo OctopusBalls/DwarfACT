@@ -48,7 +48,7 @@ public class SwitchingScenes : MonoBehaviour {
                 break;
 
             case "SimpleAugmentedReality":
-                if (ScoreManager.GetScore() == DwarfScript.FLAG_MAX) SceneManager.LoadScene("Result");
+                if (ScoreManager.GetScore() == DwarfScript.FLAG_ANNOUNCE) SceneManager.LoadScene("Result");
                 break;
         }
 	}
