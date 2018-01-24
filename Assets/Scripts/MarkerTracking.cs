@@ -64,27 +64,46 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
         {
             TangoSupport.Marker marker = markers[i];
 
-            //switch (marker.m_content)
-            //{
-            //    case "1":
-            //        //マーカーの位置と角度をモデルに反映
-            //        flagModel[0].transform.position = marker.m_translation;
-            //        flagModel[0].transform.rotation = marker.m_orientation;
+            switch (marker.m_content)
+            {
+                case "1":
+                    SetFlagLocation(flagModel[0], marker);
+                    break;
 
-            //        //モデルの中心が原点に設定されていることが多いので、ここで調整
-            //        flagModel[0].transform.Translate(0, flagHeight * 0.01f, 0, Space.Self);
-            //        break;
+                case "2":
+                    SetFlagLocation(flagModel[1], marker);
+                    break;
 
-            //}
+                case "3":
+                    SetFlagLocation(flagModel[2], marker);
+                    break;
 
-            //同時に表示するために1つの分岐にまとめない
-            if (marker.m_content == "1") SetFlagLocation(flagModel[0], marker);
-            if (marker.m_content == "2") SetFlagLocation(flagModel[1], marker);
-            if (marker.m_content == "3") SetFlagLocation(flagModel[2], marker);
-            if (marker.m_content == "4") SetFlagLocation(flagModel[3], marker);
-            if (marker.m_content == "5") SetFlagLocation(flagModel[4], marker);
-            if (marker.m_content == "6") SetFlagLocation(flagModel[5], marker);
-            if (marker.m_content == "7") SetFlagLocation(flagModel[6], marker);
+                case "4":
+                    SetFlagLocation(flagModel[3], marker);
+                    break;
+
+                case "5":
+                    SetFlagLocation(flagModel[4], marker);
+                    break;
+
+                case "6":
+                    SetFlagLocation(flagModel[5], marker);
+                    break;
+
+                case "7":
+                    SetFlagLocation(flagModel[6], marker);
+                    break;
+
+            }
+
+            ////同時に表示するために1つの分岐にまとめない
+            //if (marker.m_content == "1") SetFlagLocation(flagModel[0], marker);
+            //if (marker.m_content == "2") SetFlagLocation(flagModel[1], marker);
+            //if (marker.m_content == "3") SetFlagLocation(flagModel[2], marker);
+            //if (marker.m_content == "4") SetFlagLocation(flagModel[3], marker);
+            //if (marker.m_content == "5") SetFlagLocation(flagModel[4], marker);
+            //if (marker.m_content == "6") SetFlagLocation(flagModel[5], marker);
+            //if (marker.m_content == "7") SetFlagLocation(flagModel[6], marker);
         }
     }
 
