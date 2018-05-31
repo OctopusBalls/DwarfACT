@@ -95,15 +95,6 @@ public class MarkerTracking : MonoBehaviour, ITangoVideoOverlay {
                     break;
 
             }
-
-            ////同時に表示するために1つの分岐にまとめない
-            //if (marker.m_content == "1") SetFlagLocation(flagModel[0], marker);
-            //if (marker.m_content == "2") SetFlagLocation(flagModel[1], marker);
-            //if (marker.m_content == "3") SetFlagLocation(flagModel[2], marker);
-            //if (marker.m_content == "4") SetFlagLocation(flagModel[3], marker);
-            //if (marker.m_content == "5") SetFlagLocation(flagModel[4], marker);
-            //if (marker.m_content == "6") SetFlagLocation(flagModel[5], marker);
-            //if (marker.m_content == "7") SetFlagLocation(flagModel[6], marker);
         }
     }
 
